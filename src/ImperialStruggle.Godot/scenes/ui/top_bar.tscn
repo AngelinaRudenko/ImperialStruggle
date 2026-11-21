@@ -642,14 +642,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Tick00" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
-layout_mode = 1
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 0.941176, 0.823529, 0.6)
-
 [node name="Tick01" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
 layout_mode = 1
 anchor_left = 0.033333
@@ -987,16 +979,6 @@ offset_bottom = -5.0
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 0.941176, 0.823529, 0.22)
-
-[node name="Tick30" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
-layout_mode = 1
-anchor_left = 1
-anchor_right = 1
-anchor_bottom = 1.0
-offset_right = 1.0
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 0.941176, 0.823529, 0.6)
 
 [node name="Marker" type="Control" parent="Content/Row/VictoryPoints/Track/Inner"]
 layout_mode = 1
