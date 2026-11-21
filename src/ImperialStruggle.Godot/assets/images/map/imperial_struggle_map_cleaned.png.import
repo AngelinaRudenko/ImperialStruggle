@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbvo7m6y2omcb"
-path="res://.godot/imported/imperial_struggle_map.png-f2a7fa5e79b381d6e06b85c0cfedc295.ctex"
+uid="uid://bnese3v3q6807"
+path="res://.godot/imported/imperial_struggle_map_cleaned.png-f64858bffc4a727c2a432266caa5d991.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/map/imperial_struggle_map.png"
-dest_files=["res://.godot/imported/imperial_struggle_map.png-f2a7fa5e79b381d6e06b85c0cfedc295.ctex"]
+source_file="res://assets/images/map/imperial_struggle_map_cleaned.png"
+dest_files=["res://.godot/imported/imperial_struggle_map_cleaned.png-f64858bffc4a727c2a432266caa5d991.ctex"]
 
 [params]
 

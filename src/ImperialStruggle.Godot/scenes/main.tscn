@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c57fdinwrleqv"]
 
-[ext_resource type="Texture2D" uid="uid://cbvo7m6y2omcb" path="res://assets/images/map/imperial_struggle_map.png" id="1_map"]
+[ext_resource type="Texture2D" path="res://assets/images/map/imperial_struggle_map_cleaned.png" id="1_map"]
 
 [node name="Main" type="Control" unique_id=306231539]
 layout_mode = 3
