@@ -1,0 +1,1298 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/icons/crest.svg" id="1_crest"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/shield_britain.svg" id="2_shield_br"]
+[ext_resource type="Texture2D" path="res://assets/ui/icons/shield_france.svg" id="3_shield_fr"]
+[ext_resource type="Shader" path="res://assets/ui/shaders/rounded_mask.gdshader" id="4_rounded"]
+[ext_resource type="FontVariation" path="res://assets/ui/fonts/cinzel_bold.tres" id="5_cinzel_bold"]
+[ext_resource type="FontVariation" path="res://assets/ui/fonts/inter_regular.tres" id="6_inter_regular"]
+[ext_resource type="FontVariation" path="res://assets/ui/fonts/inter_bold.tres" id="8_inter_bold"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/Cinzel-Variable.ttf" id="9_cinzel_file"]
+[ext_resource type="FontFile" path="res://assets/ui/fonts/Inter-Variable.ttf" id="10_inter_file"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_bar_shadow"]
+bg_color = Color(0.082353, 0.066667, 0.047059, 1)
+shadow_color = Color(0, 0, 0, 0.45)
+shadow_size = 24
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="Gradient" id="Gradient_bar"]
+colors = PackedColorArray(0.137255, 0.113725, 0.082353, 1, 0.082353, 0.066667, 0.047059, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_bar"]
+gradient = SubResource("Gradient_bar")
+width = 2
+height = 128
+fill_to = Vector2(0, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_title"]
+base_font = ExtResource("9_cinzel_file")
+variation_opentype = {
+2003265652: 700
+}
+spacing_glyph = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_title"]
+font = SubResource("FontVariation_title")
+font_size = 21
+font_color = Color(0.92549, 0.827451, 0.576471, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_side_fill"]
+shader = ExtResource("4_rounded")
+shader_parameter/corner_radius_ratio = 0.160714
+
+[sub_resource type="Gradient" id="Gradient_britain_fill"]
+colors = PackedColorArray(0.721569, 0.196078, 0.172549, 0.42, 0.721569, 0.196078, 0.172549, 0.12)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_britain_fill"]
+gradient = SubResource("Gradient_britain_fill")
+width = 256
+height = 2
+
+[sub_resource type="Gradient" id="Gradient_france_fill"]
+colors = PackedColorArray(0.247059, 0.454902, 0.8, 0.12, 0.247059, 0.454902, 0.8, 0.42)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_france_fill"]
+gradient = SubResource("Gradient_france_fill")
+width = 256
+height = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_britain_frame_acting"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94902, 0.631373, 0.6, 1)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+shadow_color = Color(0.913725, 0.466667, 0.423529, 0.25)
+shadow_size = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_side_frame_idle"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788235, 0.647059, 0.352941, 0.3)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="FontVariation" id="FontVariation_side_name"]
+base_font = ExtResource("9_cinzel_file")
+variation_opentype = {
+2003265652: 700
+}
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_side_name"]
+font = SubResource("FontVariation_side_name")
+font_size = 17
+
+[sub_resource type="StyleBoxEmpty" id="StyleBox_align_to_side_name"]
+content_margin_bottom = 4.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_side_info"]
+font = ExtResource("6_inter_regular")
+font_size = 12
+font_color = Color(0.878431, 0.831373, 0.721569, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_acting"]
+base_font = ExtResource("10_inter_file")
+variation_opentype = {
+2003265652: 700
+}
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_britain_acting"]
+font = SubResource("FontVariation_acting")
+font_size = 11
+font_color = Color(1, 0.839216, 0.815686, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_france_acting"]
+font = SubResource("FontVariation_acting")
+font_size = 11
+font_color = Color(0.839216, 0.894118, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_side_value"]
+font = ExtResource("8_inter_bold")
+font_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_pip_full"]
+bg_color = Color(0.92549, 0.827451, 0.576471, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_pip_empty"]
+bg_color = Color(1, 0.941176, 0.823529, 0.18)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="FontVariation" id="FontVariation_vp_label"]
+base_font = ExtResource("10_inter_file")
+variation_opentype = {
+2003265652: 600
+}
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_vp_label"]
+font = SubResource("FontVariation_vp_label")
+font_size = 11
+font_color = Color(0.701961, 0.647059, 0.529412, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vp_title"]
+font = SubResource("FontVariation_vp_label")
+font_size = 11
+font_color = Color(0.92549, 0.827451, 0.576471, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vp_track"]
+shader = ExtResource("4_rounded")
+shader_parameter/corner_radius_ratio = 0.45
+
+[sub_resource type="Gradient" id="Gradient_vp_track"]
+offsets = PackedFloat32Array(0, 0.42, 0.58, 1)
+colors = PackedColorArray(0.490196, 0.129412, 0.109804, 1, 0.227451, 0.184314, 0.133333, 1, 0.227451, 0.184314, 0.133333, 1, 0.156863, 0.309804, 0.584314, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_vp_track"]
+gradient = SubResource("Gradient_vp_track")
+width = 512
+height = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_vp_track_border"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.788235, 0.647059, 0.352941, 0.5)
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_marker_glow"]
+draw_center = false
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
+corner_detail = 16
+shadow_color = Color(0.92549, 0.784314, 0.470588, 0.3)
+shadow_size = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_marker_ring"]
+bg_color = Color(0, 0, 0, 0.45)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+corner_detail = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_marker_rim"]
+bg_color = Color(1, 0.952941, 0.811765, 1)
+corner_radius_top_left = 19
+corner_radius_top_right = 19
+corner_radius_bottom_right = 19
+corner_radius_bottom_left = 19
+corner_detail = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_circle"]
+shader = ExtResource("4_rounded")
+shader_parameter/corner_radius_ratio = 0.5
+
+[sub_resource type="Gradient" id="Gradient_marker_face"]
+colors = PackedColorArray(0.984314, 0.933333, 0.768627, 1, 0.717647, 0.541176, 0.215686, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture_marker_face"]
+gradient = SubResource("Gradient_marker_face")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.4, 0.35)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_marker_value"]
+font = ExtResource("5_cinzel_bold")
+font_size = 15
+font_color = Color(0.113725, 0.082353, 0.039216, 1)
+
+[sub_resource type="Animation" id="Animation_acting_dots"]
+resource_name = "acting_dots"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content/Row/BritainPanel/Margin/HBox/Info/NameRow/Acting/Dots:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7, 1.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", ".", "..", "..."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Content/Row/FrancePanel/Margin/HBox/Info/NameRow/Acting/Dots:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35, 0.7, 1.05),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["", ".", "..", "..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_top_bar"]
+_data = {
+&"acting_dots": SubResource("Animation_acting_dots")
+}
+
+[node name="TopBar" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 72.0
+grow_horizontal = 2
+
+[node name="Shadow" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_bar_shadow")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture_bar")
+expand_mode = 1
+
+[node name="BottomBorder" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0.788235, 0.647059, 0.352941, 0.45)
+
+[node name="Content" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="Row" type="HBoxContainer" parent="Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 18
+
+[node name="Brand" type="Control" parent="Content/Row"]
+custom_minimum_size = Vector2(292, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="Content/Row/Brand"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Crest" type="TextureRect" parent="Content/Row/Brand/HBox"]
+texture_filter = 4
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("1_crest")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Content/Row/Brand/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Imperial Struggle"
+label_settings = SubResource("LabelSettings_title")
+
+[node name="BritainPanel" type="Control" parent="Content/Row"]
+custom_minimum_size = Vector2(340, 56)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Fill" type="TextureRect" parent="Content/Row/BritainPanel"]
+material = SubResource("ShaderMaterial_side_fill")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture_britain_fill")
+expand_mode = 1
+
+[node name="Frame" type="Panel" parent="Content/Row/BritainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_britain_frame_acting")
+
+[node name="Margin" type="MarginContainer" parent="Content/Row/BritainPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_right = 13
+
+[node name="HBox" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Shield" type="TextureRect" parent="Content/Row/BritainPanel/Margin/HBox"]
+texture_filter = 4
+custom_minimum_size = Vector2(30, 34)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("2_shield_br")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Info" type="VBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="NameRow" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SideName" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Britain"
+label_settings = SubResource("LabelSettings_side_name")
+
+[node name="Player" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "You"
+label_settings = SubResource("LabelSettings_side_info")
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="Spacer" type="Control" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Acting" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Text" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow/Acting"]
+layout_mode = 2
+text = "Acting"
+label_settings = SubResource("LabelSettings_britain_acting")
+uppercase = true
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="Dots" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/NameRow/Acting"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+text = "..."
+label_settings = SubResource("LabelSettings_britain_acting")
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="StatsRow" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="Debt" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+text = "Debt"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="GapBeforePips" type="Control" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Pips" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_full")
+
+[node name="Pip2" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_full")
+
+[node name="Pip3" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_full")
+
+[node name="Pip4" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip5" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip6" type="Panel" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="GapAfterPips" type="Control" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt"]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Value" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+text = "3/6"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="Trp" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Trp"]
+layout_mode = 2
+text = "TRP"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="Value" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Trp"]
+layout_mode = 2
+text = "2"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="Clock" type="HBoxContainer" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Clock"]
+layout_mode = 2
+text = "Clock"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="Value" type="Label" parent="Content/Row/BritainPanel/Margin/HBox/Info/StatsRow/Clock"]
+layout_mode = 2
+text = "38:20"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="VictoryPoints" type="VBoxContainer" parent="Content/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="Labels" type="HBoxContainer" parent="Content/Row/VictoryPoints"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="BritainEnd" type="Label" parent="Content/Row/VictoryPoints/Labels"]
+layout_mode = 2
+text = "0 · Britain auto-win"
+label_settings = SubResource("LabelSettings_vp_label")
+uppercase = true
+
+[node name="SpacerLeft" type="Control" parent="Content/Row/VictoryPoints/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Title" type="Label" parent="Content/Row/VictoryPoints/Labels"]
+layout_mode = 2
+text = "Victory Points"
+label_settings = SubResource("LabelSettings_vp_title")
+uppercase = true
+
+[node name="SpacerRight" type="Control" parent="Content/Row/VictoryPoints/Labels"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="FranceEnd" type="Label" parent="Content/Row/VictoryPoints/Labels"]
+layout_mode = 2
+text = "France auto-win · 30"
+label_settings = SubResource("LabelSettings_vp_label")
+uppercase = true
+
+[node name="Track" type="Control" parent="Content/Row/VictoryPoints"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Fill" type="TextureRect" parent="Content/Row/VictoryPoints/Track"]
+material = SubResource("ShaderMaterial_vp_track")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture_vp_track")
+expand_mode = 1
+
+[node name="Border" type="Panel" parent="Content/Row/VictoryPoints/Track"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_vp_track_border")
+
+[node name="Inner" type="Control" parent="Content/Row/VictoryPoints/Track"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Ticks" type="Control" parent="Content/Row/VictoryPoints/Track/Inner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Tick00" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick01" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.033333
+anchor_right = 0.033333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick02" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.066667
+anchor_right = 0.066667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick03" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.1
+anchor_right = 0.1
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick04" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.133333
+anchor_right = 0.133333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick05" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.166667
+anchor_right = 0.166667
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick06" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.2
+anchor_right = 0.2
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick07" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.233333
+anchor_right = 0.233333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick08" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.266667
+anchor_right = 0.266667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick09" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.3
+anchor_right = 0.3
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick10" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.333333
+anchor_right = 0.333333
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick11" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.366667
+anchor_right = 0.366667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick12" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.4
+anchor_right = 0.4
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick13" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.433333
+anchor_right = 0.433333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick14" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.466667
+anchor_right = 0.466667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick15" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick16" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.533333
+anchor_right = 0.533333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick17" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.566667
+anchor_right = 0.566667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick18" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.6
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick19" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.633333
+anchor_right = 0.633333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick20" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.666667
+anchor_right = 0.666667
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick21" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.7
+anchor_right = 0.7
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick22" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.733333
+anchor_right = 0.733333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick23" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.766667
+anchor_right = 0.766667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick24" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.8
+anchor_right = 0.8
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick25" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.833333
+anchor_right = 0.833333
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Tick26" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.866667
+anchor_right = 0.866667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick27" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.9
+anchor_right = 0.9
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick28" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.933333
+anchor_right = 0.933333
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick29" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 0.966667
+anchor_right = 0.966667
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_right = 1.0
+offset_bottom = -5.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.22)
+
+[node name="Tick30" type="ColorRect" parent="Content/Row/VictoryPoints/Track/Inner/Ticks"]
+layout_mode = 1
+anchor_left = 1
+anchor_right = 1
+anchor_bottom = 1.0
+offset_right = 1.0
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 0.941176, 0.823529, 0.6)
+
+[node name="Marker" type="Control" parent="Content/Row/VictoryPoints/Track/Inner"]
+layout_mode = 1
+anchor_left = 0.433333
+anchor_top = 0.5
+anchor_right = 0.433333
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Glow" type="Panel" parent="Content/Row/VictoryPoints/Track/Inner/Marker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_marker_glow")
+
+[node name="Ring" type="Panel" parent="Content/Row/VictoryPoints/Track/Inner/Marker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_marker_ring")
+
+[node name="Rim" type="Panel" parent="Content/Row/VictoryPoints/Track/Inner/Marker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_marker_rim")
+
+[node name="Face" type="TextureRect" parent="Content/Row/VictoryPoints/Track/Inner/Marker"]
+material = SubResource("ShaderMaterial_circle")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture_marker_face")
+expand_mode = 1
+
+[node name="Value" type="Label" parent="Content/Row/VictoryPoints/Track/Inner/Marker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "13"
+label_settings = SubResource("LabelSettings_marker_value")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FrancePanel" type="Control" parent="Content/Row"]
+custom_minimum_size = Vector2(340, 56)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="Fill" type="TextureRect" parent="Content/Row/FrancePanel"]
+material = SubResource("ShaderMaterial_side_fill")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture_france_fill")
+expand_mode = 1
+
+[node name="Frame" type="Panel" parent="Content/Row/FrancePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_side_frame_idle")
+
+[node name="Margin" type="MarginContainer" parent="Content/Row/FrancePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 13
+theme_override_constants/margin_right = 13
+
+[node name="HBox" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="Shield" type="TextureRect" parent="Content/Row/FrancePanel/Margin/HBox"]
+texture_filter = 4
+custom_minimum_size = Vector2(30, 34)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("3_shield_fr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Info" type="VBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 6
+
+[node name="NameRow" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="SideName" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "France"
+label_settings = SubResource("LabelSettings_side_name")
+
+[node name="Player" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "Opponent"
+label_settings = SubResource("LabelSettings_side_info")
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="Spacer" type="Control" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Acting" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Text" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow/Acting"]
+layout_mode = 2
+text = "Acting"
+label_settings = SubResource("LabelSettings_france_acting")
+uppercase = true
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="Dots" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/NameRow/Acting"]
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+text = "..."
+label_settings = SubResource("LabelSettings_france_acting")
+theme_override_styles/normal = SubResource("StyleBox_align_to_side_name")
+
+[node name="StatsRow" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="Debt" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+text = "Debt"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="GapBeforePips" type="Control" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Pips" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Pip1" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_full")
+
+[node name="Pip2" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip3" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip4" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip5" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="Pip6" type="Panel" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt/Pips"]
+custom_minimum_size = Vector2(7, 11)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBox_pip_empty")
+
+[node name="GapAfterPips" type="Control" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt"]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Value" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Debt"]
+layout_mode = 2
+text = "1/6"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="Trp" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Trp"]
+layout_mode = 2
+text = "TRP"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="Value" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Trp"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="Clock" type="HBoxContainer" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 3
+
+[node name="Label" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Clock"]
+layout_mode = 2
+text = "Clock"
+label_settings = SubResource("LabelSettings_side_info")
+
+[node name="Value" type="Label" parent="Content/Row/FrancePanel/Margin/HBox/Info/StatsRow/Clock"]
+layout_mode = 2
+text = "41:05"
+label_settings = SubResource("LabelSettings_side_value")
+
+[node name="GameMenuPlaceholder" type="Control" parent="Content/Row"]
+custom_minimum_size = Vector2(200, 44)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_top_bar")
+}
+autoplay = &"acting_dots"
